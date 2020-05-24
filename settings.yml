@@ -1,0 +1,8 @@
+min_trust_level:
+  default: 2
+  type: enum
+  choices:
+    - 1
+    - 2
+    - 3
+    - 4

@@ -1,0 +1,10 @@
+{
+  "name": "Raw Post Button",
+  "about_url": null,
+  "component": true,
+  "license_url": null,
+  "assets": {
+    "icons-sprite": "/assets/sprite.svg"
+  },
+  "color_schemes": {}
+}
