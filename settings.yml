@@ -1,5 +1,5 @@
 min_trust_level:
-  default: 2
+  default: 0
   type: enum
   description: "Minimum required trust level for the button to be visible in the post menu"
   choices:
