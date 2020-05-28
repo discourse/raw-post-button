@@ -7,9 +7,10 @@ export default {
   initialize() {
     withPluginApi("0.8.7", api => {
       const currentUser = api.getCurrentUser();
+      if (!currentUser) return;
 
       if (
-        (currentUser && currentUser.staff) ||
+        currentUser.staff ||
         currentUser.trust_level >= settings.min_trust_level
       ) {
         api.attachWidgetAction("post-menu", "showRaw", function() {
