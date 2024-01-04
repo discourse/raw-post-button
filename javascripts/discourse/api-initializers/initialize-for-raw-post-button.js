@@ -1,11 +1,13 @@
-import { ajax } from "discourse/lib/ajax";
 import FullscreenCode from "discourse/components/modal/fullscreen-code";
-import { apiInitializer } from "discourse/lib/api";
+import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
+import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer("0.8", (api) => {
   const currentUser = api.getCurrentUser();
-  if (!currentUser) return;
+  if (!currentUser) {
+    return;
+  }
 
   if (
     !(currentUser.staff || currentUser.trust_level >= settings.min_trust_level)
