@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.describe "Raw post button", system: true do
-  let!(:theme) do
-    upload_theme_component
-  end
-  
+  let!(:theme) { upload_theme_component }
+
   let(:user) { Fabricate(:user) }
-  
+
   it "should display the component" do
     post = Fabricate(:post, raw: "**This is a test post**")
 
