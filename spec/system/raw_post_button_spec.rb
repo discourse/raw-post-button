@@ -11,7 +11,6 @@ RSpec.describe "Raw post button", system: true do
     sign_in user
     visit "/t/#{post.topic_id}"
 
-
     # test if the button is hidden by default
     expect(page).to have_no_css(".post-controls .actions .post-action-menu__raw-post")
 
