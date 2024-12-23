@@ -11,6 +11,12 @@ RSpec.describe "Raw post button", system: true do
     sign_in user
     visit "/t/#{post.topic_id}"
 
+
+    # test if the button is hidden by default
+    expect(page).to have_no_css(".post-controls .actions .post-action-menu__raw-post")
+
+    # expand the buttons and click in raw post
+    find(".post-controls .actions .post-action-menu__show-more").click
     find(".post-controls .actions .post-action-menu__raw-post").click
 
     expect(page).to have_css(".fullscreen-code-modal")
