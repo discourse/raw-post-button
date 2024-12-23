@@ -33,7 +33,7 @@ export default class ShowRawButton extends Component {
       ...attributes
       @action={{this.showRaw}}
       @icon="file-lines"
-      @label={{if this.args.showLabel (themePrefix "button_label")}}
+      @label={{if @showLabel (themePrefix "button_label")}}
       @title={{themePrefix "button_title"}}
     />
   </template>
