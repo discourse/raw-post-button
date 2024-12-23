@@ -1,9 +1,7 @@
-import FullscreenCode from "discourse/components/modal/fullscreen-code";
-import { ajax } from "discourse/lib/ajax";
-import { popupAjaxError } from "discourse/lib/ajax-error";
 import { apiInitializer } from "discourse/lib/api";
+import ShowRawButton from "../components/show-raw-button";
 
-export default apiInitializer("0.8", (api) => {
+export default apiInitializer("1.34.0", (api) => {
   const currentUser = api.getCurrentUser();
   if (!currentUser) {
     return;
@@ -15,24 +13,16 @@ export default apiInitializer("0.8", (api) => {
     return;
   }
 
-  api.addPostMenuButton("show-raw", () => ({
-    async action({ post }) {
-      try {
-        const response = await ajax(`/posts/${post.id}/raw`, {
-          dataType: "text",
-        });
-        api.container.lookup("service:modal").show(FullscreenCode, {
-          model: {
-            code: response,
-          },
-        });
-      } catch (e) {
-        popupAjaxError(e);
-      }
-    },
-    icon: "file-alt",
-    className: "raw-post",
-    title: themePrefix("button_title"),
-    position: "second-last-hidden",
-  }));
+  api.registerValueTransformer(
+    "post-menu-buttons",
+    ({
+      value: dag,
+      context: { lastHiddenButtonKey, secondLastHiddenButtonKey },
+    }) => {
+      dag.add("show-raw", ShowRawButton, {
+        before: lastHiddenButtonKey,
+        after: secondLastHiddenButtonKey,
+      });
+    }
+  );
 });

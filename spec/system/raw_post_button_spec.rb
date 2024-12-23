@@ -11,7 +11,7 @@ RSpec.describe "Raw post button", system: true do
     sign_in user
     visit "/t/#{post.topic_id}"
 
-    find(".extra-buttons .raw-post").click
+    find(".post-controls .actions .post-action-menu__raw-post").click
 
     expect(page).to have_css(".fullscreen-code-modal")
     expect(find(".fullscreen-code-modal code")).to have_text("**This is a test post**")
