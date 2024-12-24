@@ -17,7 +17,7 @@ export default class ShowRawButton extends Component {
       const response = await ajax(`/posts/${this.args.post.id}/raw`, {
         dataType: "text",
       });
-      this.modal.show(FullscreenCode, {
+      await this.modal.show(FullscreenCode, {
         model: {
           code: response,
         },
