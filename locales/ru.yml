@@ -5,4 +5,5 @@
 # https://translate.discourse.org/
 
 ru:
+  button_label: "Исходная (в Markdown) публикация"
   button_title: "Исходная (в Markdown) публикация"
