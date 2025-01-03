@@ -5,4 +5,5 @@
 # https://translate.discourse.org/
 
 it:
+  button_label: "Messaggio non elaborato"
   button_title: "Messaggio non elaborato"

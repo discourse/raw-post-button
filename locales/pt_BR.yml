@@ -5,4 +5,5 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  button_label: "Postagem não processada"
   button_title: "Postagem não processada"

@@ -5,4 +5,5 @@
 # https://translate.discourse.org/
 
 fr:
+  button_label: "Publication brute"
   button_title: "Publication brute"
