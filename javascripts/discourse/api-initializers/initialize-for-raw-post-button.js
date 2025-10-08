@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import ShowRawButton from "../components/show-raw-button";
 
-export default apiInitializer("1.34.0", (api) => {
+export default apiInitializer((api) => {
   const currentUser = api.getCurrentUser();
   if (!currentUser) {
     return;
