@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 el:
+  button_label: "Ακατέργαστη ανάρτηση"
+  button_title: "Ακατέργαστη ανάρτηση"
